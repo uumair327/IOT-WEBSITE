@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050510">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="assets/iot/iot-logo.png">
+    <title>IoT KJSIT - Future of Connected Technology</title>
+    <link rel="icon" type="image/x-icon" href="assets/IoT/iot-logo-a.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/scrollbar.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="assets/IoT/iot-logo-a.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">LOADING</div>
+        </div>
+    </div>
+
+    <!-- Cursor Effect -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/IoT/iot-logo-a.png" alt="IoT Club Logo" class="me-2">
+                <span>IoT KJSIT</span>
+            </a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" 
+                    id="mobile-menu-toggle"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home me-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            <i class="fas fa-info-circle me-2"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#domains">
+                            <i class="fas fa-cubes me-2"></i>Domains
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#explore">
+                            <i class="fas fa-laptop-code me-2"></i>Explore
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">
+                            <i class="fas fa-project-diagram me-2"></i>Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">
+                            <i class="fas fa-question-circle me-2"></i>FAQ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-2"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center mt-3 mt-lg-0 ms-lg-3">
+                        <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun d-none"></i>
+                        </button>
+                        <a href="#join" class="btn btn-primary ms-2">
+                            <i class="fas fa-user-plus me-2"></i>Join Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Navigation Menu -->
+            
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Sponsors Carousel -->
+    <section class="sponsors-section py-4">
+        <div class="container">
+            <h3 class="text-center mb-4">Our Sponsors</h3>
+            <div class="sponsors-carousel">
+                <div class="sponsors-track">
+                    <!-- First set of sponsors -->
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/kgen.jpg" alt="KG Engineering" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/noescape.png" alt="No Escape" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/omen.jpg" alt="OMEN by HP" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/daily_delight.png" alt="Daily Delight" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/mario_waffles.jpg" alt="Mario Waffles" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/yakult.png" alt="Yakult" loading="lazy">
+                    </div>
+                    <!-- Duplicate set for infinite loop effect -->
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/kgen.jpg" alt="KG Engineering" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/noescape.png" alt="No Escape" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/omen.jpg" alt="OMEN by HP" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/daily_delight.png" alt="Daily Delight" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/mario_waffles.jpg" alt="Mario Waffles" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/yakult.png" alt="Yakult" loading="lazy">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="assets/sponsor/omen.jpg" alt="OMEN by HP" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-shapes">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="hero-text">
+                <h6 class="text-uppercase text-primary mb-2">Welcome to the Future</h6>
+                <h1>Transforming Ideas into <span class="text-gradient">Connected Reality</span></h1>
+                <h2 class="mb-4">Join the Internet of Things Club at KJSIT and be part of the next technological revolution</h2>
+                
+                <div class="cta-buttons">
+                    <a href="#about" class="btn btn-primary me-3">
+                        <i class="fas fa-rocket me-2"></i>Explore More
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane me-2"></i>Contact Us
+                    </a>
+                </div>
+                
+                <div class="scroll-down d-none d-md-block">
+                    <span>Scroll Down</span>
+                </div>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                <img 
+                    src="assets/iot/iot_illustrations .png" 
+                    alt="IoT Illustration" 
+                    class="img-fluid"
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                    srcset="
+                        assets/iot/iot_illustrations_small.png 400w,
+                        assets/iot/iot_illustrations_medium.png 800w,
+                        assets/iot/iot_illustrations.png 1200w"
+                    sizes="(max-width: 768px) 100vw, 50vw">
+            </div>
+            
+            <div class="scroll-down d-md-none text-center mt-4">
+                <span>Scroll Down</span>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-image">
+                        <div class="image-wrapper">
+                            <img src="assets/IoT/about-iot.jpg" alt="About IoT" class="img-fluid rounded-4">
+                            <div class="experience-badge">
+                                <span class="counter" data-count="5">0</span>+
+                                <span>Years of Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-header mb-4">
+                        <span class="badge bg-primary-soft text-primary mb-2">About Us</span>
+                        <h2 class="display-5 fw-bold mb-3">What is <span class="text-gradient">IoT</span>?</h2>
+                        <p class="lead text-muted">Bridging the gap between theory and practice in the world of connected devices.</p>
+                    </div>
+                    
+                    <div class="about-content">
+                        <p>The Internet of Things represents the next evolution of the internet, where everyday objects are connected to the network, collecting and sharing data to make our lives more efficient and convenient.</p>
+                        
+                        <div class="feature-list mt-4">
+                            <div class="d-flex mb-3">
+                                <div class="feature-icon me-3">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Smart Solutions</h5>
+                                    <p class="mb-0 text-muted">Develop innovative IoT solutions for real-world problems</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex mb-3">
+                                <div class="feature-icon me-3">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Community</h5>
+                                    <p class="mb-0 text-muted">Join a community of passionate IoT enthusiasts</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex">
+                                <div class="feature-icon me-3">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Hands-on Learning</h5>
+                                    <p class="mb-0 text-muted">Gain practical experience with cutting-edge technologies</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-2">
+                            <a href="#domains" class="btn btn-primary me-3">Explore Domains</a>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Domains Section -->
+    <section class="domains py-8 py-lg-10 bg-dark" id="domains">
+        <div class="container">
+            <div class="text-center mb-8" data-aos="fade-up">
+                <span class="badge bg-primary-soft text-primary mb-3">Our Team</span>
+                <h2 class="display-5 fw-bold mb-3">Our <span class="text-gradient">Domains</span></h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    Meet the dedicated teams behind each domain, working together to drive innovation and excellence.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Technical Domain -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="domain-card">
+                        <div class="card-body p-4">
+                            <div class="domain-icon mb-4">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Technical</h3>
+                            <p class="text-muted mb-4">Driving technical innovation and development across all our projects.</p>
+                            <div class="team-members">
+                                <div class="member">
+                                    <h5>Admin 1</h5>
+                                    <p class="text-muted">John Smith</p>
+                                </div>
+                                <div class="member">
+                                    <h5>Admin 2</h5>
+                                    <p class="text-muted">Sarah Johnson</p>
+                                </div>
+                                <div class="member">
+                                    <h5>Joint Admin</h5>
+                                    <p class="text-muted">Mike Williams</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DMM Domain -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="domain-card">
+                        <div class="card-body p-4">
+                            <div class="domain-icon mb-4">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="h4 mb-3">DMM</h3>
+                            <p class="text-muted mb-4">Managing digital media and marketing strategies for maximum impact.</p>
+                            <div class="team-members">
+                                <div class="member">
+                                    <h5>Admin 1</h5>
+                                    <p class="text-muted">Emily Davis</p>
+                                </div>
+                                <div class="member">
+                                    <h5>Admin 2</h5>
+                                    <p class="text-muted">David Wilson</p>
+                                </div>
+                                <div class="member">
+                                    <h5>Joint Admin</h5>
+                                    <p class="text-muted">Lisa Brown</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Organizing Domain -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="domain-card">
+                        <div class="card-body p-4">
+                            <div class="domain-icon mb-4">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Organizing</h3>
+                            <p class="text-muted mb-4">Ensuring smooth operations and coordination of all events and activities.</p>
+                            <div class="team-members">
+                                <div class="member">
+                                    <h5>Admin 1</h5>
+                                    <p class="text-muted">Robert Taylor</p>
+                                </div>
+                                <div class="member">
+                                    <h5>Admin 2</h5>
+                                    <p class="text-muted">Jennifer Anderson</p>
+                                </div>
+                                <div class="member">
+                                    <h5>Joint Admin</h5>
+                                    <p class="text-muted">Thomas Martinez</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publicity Domain -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="domain-card">
+                        <div class="card-body p-4">
+                            <div class="domain-icon mb-4">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Publicity</h3>
+                            <p class="text-muted mb-4">Amplifying our presence and reach through strategic communication and media.</p>
+                            <div class="team-members">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="member">
+                                            <h5>Admin 1</h5>
+                                            <p class="text-muted">Jessica Garcia</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="member">
+                                            <h5>Admin 2</h5>
+                                            <p class="text-muted">Daniel Rodriguez</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="member">
+                                            <h5>Joint Admin</h5>
+                                            <p class="text-muted">Michelle Lee</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Domain -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="domain-card">
+                        <div class="card-body p-4">
+                            <div class="domain-icon mb-4">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Marketing</h3>
+                            <p class="text-muted mb-4">Developing and executing marketing strategies to grow our community and impact.</p>
+                            <div class="team-members">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="member">
+                                            <h5>Admin 1</h5>
+                                            <p class="text-muted">Christopher Martinez</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="member">
+                                            <h5>Admin 2</h5>
+                                            <p class="text-muted">Amanda Thompson</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="member">
+                                            <h5>Joint Admin</h5>
+                                            <p class="text-muted">Kevin Robinson</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section class="explore py-8 py-lg-10 bg-light" id="explore">
+        <div class="container">
+            <div class="text-center mb-8" data-aos="fade-up">
+                <span class="badge bg-primary-soft text-primary mb-3">Learning</span>
+                <h2 class="display-5 fw-bold mb-3">Explore <span class="text-gradient">Workshops</span></h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    Join our hands-on workshops to learn and build IoT projects with industry experts.
+                </p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="card shadow-sm border-0 overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <img src="assets/workshop/iot.png" class="img-fluid h-100" alt="IoT Workshop" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h3 class="h2 mb-3">IoT Workshop Series</h3>
+                                    <p class="text-muted mb-4">
+                                        Hands-on workshops and training sessions on IoT technologies, embedded systems, and smart device development. 
+                                        Learn from industry experts and work on real-world projects.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-calendar-alt text-primary me-2"></i>
+                                            <span class="small">Upcoming Sessions</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-clock text-primary me-2"></i>
+                                            <span class="small">2 Hours/Session</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-user-graduate text-primary me-2"></i>
+                                            <span class="small">All Levels</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-2">
+                                        <a href="#contact" class="btn btn-primary me-3">Register Now</a>
+                                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="gallery py-8 py-lg-10" id="gallery">
+        <div class="container">
+            <div class="text-center mb-8" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">Our <span class="text-gradient">Gallery</span></h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Glimpse from our previous events and workshops</p>
+            </div>
+      <div class="gallery-container swiper mySwiper container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              id="slide-1"
+              src="https://images.pexels.com/photos/9739345/pexels-photo-9739345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              id="slide-2"
+              src="https://images.pexels.com/photos/17824719/pexels-photo-17824719/free-photo-of-heron-in-a-stream.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              id="slide-1"
+              src="https://images.pexels.com/photos/9739345/pexels-photo-9739345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <section id="faq" class="faq bg-dark">
+      <h1 class="text-light">FAQs</h1>
+      <div class="accordian">
+        <div class="accordian_head">
+          <div class="accordian_toggler">+</div>
+          <span class="accordian_title">How often does events take place?</span>
+        </div>
+        <div class="accordian_body">
+          <p class="accordian_description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
+            porro facere saepe, repellat accusamus ea quia aperiam vitae fuga
+            similique autem nostrum reiciendis quaerat sequi. Laboriosam aliquid
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+          </p>
+        </div>
+      </div>
+      <div class="accordian">
+        <div class="accordian_head">
+          <div class="accordian_toggler">+</div>
+          <span class="accordian_title">How to become a member of IoT?</span>
+        </div>
+        <div class="accordian_body">
+          <p class="accordian_description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
+            porro facere saepe, repellat accusamus ea quia aperiam vitae fuga
+            similique autem nostrum reiciendis quaerat sequi. Laboriosam aliquid
+          </p>
+        </div>
+      </div>
+      <div class="accordian">
+        <div class="accordian_head">
+          <div class="accordian_toggler">+</div>
+          <span class="accordian_title">What domains IoT KJSIT have?</span>
+        </div>
+        <div class="accordian_body">
+          <p class="accordian_description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
+            porro facere saepe, repellat accusamus ea quia aperiam vitae fuga
+            similique autem nostrum reiciendis quaerat sequi. Laboriosam aliquid
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="contact-box">
+        <div class="contact-links">
+          <h3>Send Us a</h3>
+          <h1>Message! <i class="fa-solid fa-comment-dots"></i></h1>
+        </div>
+        <div class="contact-form-wrapper">
+          <form>
+            <div class="form-item">
+              <input type="text" name="sender" required />
+              <label>Name</label>
+            </div>
+            <div class="form-item">
+              <input type="text" name="email" required />
+              <label>Email</label>
+            </div>
+            <div class="form-item">
+              <input type="number" name="phone" required />
+              <label>Phone No.</label>
+            </div>
+            <div class="form-item">
+              <textarea class="" name="message" required></textarea>
+              <label>Message</label>
+            </div>
+            <button class="submit-btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-4 col-sm-4 col-xs-12">
+            <div class="single_footer single_footer_address">
+              <h4>Our Socials</h4>
+              <div class="signup_form"></div>
+            </div>
+            <div class="social_profile">
+              <ul>
+                <li>
+                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="single_footer">
+              <img
+                class="last"
+                src="assets/IoT/iot-logo-a.png"
+                alt="iot-logo-a"
+              />
+            </div>
+          </div>
+          <div class="col col-md-4 col-sm-4 col-xs-12">
+            <div class="single_footer single_footer_address">
+              <h4>IoT KJSIT</h4>
+              <h2>Internet of Things Club</h2>
+              <p>KJ Somaiya Institute of Technology</p>
+              <p>137,V.I.P. Road, Poddar Vihar Kolkata-700052,</p>
+            </div>
+          </div>
+          <div class="col col-md-4 col-sm-4 col-xs-12">
+            <div class="single_footer single_footer_address">
+              <h4>Locate Us on G-Map</h4>
+            </div>
+            <div class="g-map-container">
+              <iframe
+                src="https://www.Internet.com/maps/embed?pb=!1m18!1m12!1m3!1d117892.53406498105!2d88.34916364690892!3d22.573803381952132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89fe3b109c623%3A0xdfbe090bb9572f78!2sB.%20P.%20Poddar%20Institute%20of%20Management%20and%20Technology!5e0!3m2!1sen!2sin!4v1693142589981!5m2!1sen!2sin"
+                width="300"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="line"></div>
+            <p class="copyright">
+              Copyright © 2024-25 <a class="text-primary" href="#">IoT KJSIT</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Modal for management  -->
+    <div
+      class="modal fade"
+      id="managementmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Management Team
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for appdev  -->
+    <div
+      class="modal fade"
+      id="appdevmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              App Development Team
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for tech  -->
+    <div
+      class="modal fade"
+      id="techmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Tech Team</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for design  -->
+    <div
+      class="modal fade"
+      id="designmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Design Team</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for outreach  -->
+    <div
+      class="modal fade"
+      id="outreachmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Outreach Team
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for cloud  -->
+    <div
+      class="modal fade"
+      id="cloudmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cloud Team</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for web dev  -->
+    <div
+      class="modal fade"
+      id="webdevmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Web Development Team
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="profile-cards-container">
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="profile-card">
+                <img src="assets/members-dp/dp.png" alt="" class="w-50" />
+                <h4 class="text-center py-2">Name Here</h4>
+                <h6 class="text-center py-2">Core Member</h6>
+                <div class="member-socials">
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-linkedin-in"></i
+                  ></a>
+                  <a class="social-link" href="#"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
