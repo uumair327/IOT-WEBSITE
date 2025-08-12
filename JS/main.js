@@ -14,6 +14,26 @@ const body = document.body;
 
 // Theme toggle functionality
 
+// Set theme
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    // Update theme toggle icon
+    if (themeToggle) {
+        const moonIcon = themeToggle.querySelector('.fa-moon');
+        const sunIcon = themeToggle.querySelector('.fa-sun');
+        
+        if (theme === 'dark') {
+            moonIcon?.classList.remove('d-none');
+            sunIcon?.classList.add('d-none');
+        } else {
+            moonIcon?.classList.add('d-none');
+            sunIcon?.classList.remove('d-none');
+        }
+    }
+}
+
 // Initialize theme
 function initTheme() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -131,6 +151,61 @@ function initSmoothScrolling() {
 // Event Listeners
 if (themeToggle) {
     themeToggle.addEventListener('click', toggleTheme);
+}
+
+// Mobile menu toggle functions
+function toggleMobileMenu() {
+    if (!mobileMenuToggle || !mobileMenu || !mobileMenuOverlay) return;
+    
+    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+    
+    if (!isExpanded) {
+        // Open menu
+        body.style.overflow = 'hidden';
+        mobileMenu.classList.add('show');
+        mobileMenuOverlay.classList.add('show');
+        
+        // Add event listeners for closing on overlay click or escape key
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        document.addEventListener('keydown', handleEscapeKey);
+        
+        // Add click outside handler
+        document.addEventListener('click', handleClickOutside);
+    } else {
+        closeMobileMenu();
+    }
+}
+
+// Close mobile menu
+function closeMobileMenu() {
+    if (!mobileMenuToggle || !mobileMenu || !mobileMenuOverlay) return;
+    
+    body.style.overflow = '';
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('show');
+    mobileMenuOverlay.classList.remove('show');
+    
+    // Remove event listeners
+    mobileMenuOverlay.removeEventListener('click', closeMobileMenu);
+    document.removeEventListener('keydown', handleEscapeKey);
+    document.removeEventListener('click', handleClickOutside);
+}
+
+// Handle click outside menu
+function handleClickOutside(e) {
+    if (mobileMenu && !mobileMenu.contains(e.target) && 
+        mobileMenuToggle && !mobileMenuToggle.contains(e.target) &&
+        mobileMenuOverlay && mobileMenuOverlay.contains(e.target)) {
+        closeMobileMenu();
+    }
+}
+
+// Handle escape key press
+function handleEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeMobileMenu();
+    }
 }
 
 // Mobile menu toggle
@@ -368,4 +443,117 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize animations for other elements
     animateOnScroll();
+});
+// Cursor tracking
+function initCursor() {
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    if (!cursor || !cursorFollower) return;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
+    });
+    
+    // Smooth follower animation
+    function animateFollower() {
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+        
+        cursorFollower.style.transform = `translate(${followerX - 4}px, ${followerY - 4}px)`;
+        
+        requestAnimationFrame(animateFollower);
+    }
+    
+    animateFollower();
+    
+    // Hide cursor on touch devices
+    document.addEventListener('touchstart', () => {
+        cursor.style.display = 'none';
+        cursorFollower.style.display = 'none';
+    });
+}
+
+// Counter animation
+function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    
+    const animateCounter = (counter) => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    };
+    
+    // Intersection Observer for counters
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme
+    initTheme();
+    
+    // Initialize FAQ accordion
+    initFAQAccordion();
+    
+    // Initialize cursor tracking
+    initCursor();
+    
+    // Initialize counters
+    initCounters();
+    
+    // Set initial navbar state
+    handleNavbarScroll();
+    
+    // Add scroll event listener for navbar
+    window.addEventListener('scroll', handleNavbarScroll);
+    
+    // Close any open mobile menu on page load
+    if (mobileMenu && mobileMenu.classList.contains('show')) {
+        mobileMenu.classList.remove('show');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('show');
+        body.style.overflow = '';
+    }
+    
+    // Initialize mobile menu functionality
+    if (mobileMenuToggle && mobileMenu && mobileMenuOverlay) {
+        initMobileMenu();
+    }
+    
+    // Initialize smooth scrolling
+    initSmoothScrolling();
+    
+    // Initialize sponsor carousel
+    initSponsorCarousel();
 });
