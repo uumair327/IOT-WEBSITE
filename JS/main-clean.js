@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initial navbar state
         handleNavbarScroll();
         
+        // Initialize cursor trail
+        initCursorTrail();
+        
         console.log('Main script initialization complete');
     } catch (error) {
         console.error('Error in main script:', error);
@@ -110,4 +113,72 @@ window.addEventListener('load', function() {
             preloader.style.display = 'none';
         }, 500);
     }
-});
+});// Curso
+r Trail Effect
+function initCursorTrail() {
+    // Only initialize on desktop devices
+    if (window.innerWidth <= 768) return;
+    
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    if (!cursor || !cursorFollower) return;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    
+    // Update mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Update cursor position immediately
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+    
+    // Smooth follower animation
+    function animateFollower() {
+        const speed = 0.2;
+        
+        followerX += (mouseX - followerX) * speed;
+        followerY += (mouseY - followerY) * speed;
+        
+        cursorFollower.style.left = followerX + 'px';
+        cursorFollower.style.top = followerY + 'px';
+        
+        requestAnimationFrame(animateFollower);
+    }
+    
+    animateFollower();
+    
+    // Add hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea, select, [role="button"]');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+            cursorFollower.classList.add('hover');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+            cursorFollower.classList.remove('hover');
+        });
+    });
+    
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+        cursorFollower.style.opacity = '0';
+    });
+    
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        cursorFollower.style.opacity = '0.5';
+    });
+    
+    console.log('Cursor trail initialized');
+}
