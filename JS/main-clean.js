@@ -12,11 +12,11 @@ function setTheme(theme) {
         const sunIcon = themeToggle.querySelector('.fa-sun');
         
         if (theme === 'dark') {
-            moonIcon?.classList.remove('d-none');
-            sunIcon?.classList.add('d-none');
+            if (moonIcon) moonIcon.classList.add('d-none');
+            if (sunIcon) sunIcon.classList.remove('d-none');
         } else {
-            moonIcon?.classList.add('d-none');
-            sunIcon?.classList.remove('d-none');
+            if (moonIcon) moonIcon.classList.remove('d-none');
+            if (sunIcon) sunIcon.classList.add('d-none');
         }
     }
 }
@@ -28,8 +28,8 @@ function initTheme() {
 }
 
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
 }
 
@@ -95,6 +95,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize cursor trail
         initCursorTrail();
         
+        // Initialize mobile navigation
+        initMobileNavigation();
+        
+        // Add resize listener
+        window.addEventListener('resize', handleResize);
+        
         console.log('Main script initialization complete');
     } catch (error) {
         console.error('Error in main script:', error);
@@ -113,8 +119,9 @@ window.addEventListener('load', function() {
             preloader.style.display = 'none';
         }, 500);
     }
-});// Curso
-r Trail Effect
+});
+
+// Cursor Trail Effect
 function initCursorTrail() {
     // Only initialize on desktop devices
     if (window.innerWidth <= 768) return;
@@ -181,4 +188,66 @@ function initCursorTrail() {
     });
     
     console.log('Cursor trail initialized');
+}// Mob
+ile Navigation
+function initMobileNavigation() {
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    
+    if (!mobileToggle || !navbarCollapse) return;
+    
+    mobileToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        this.setAttribute('aria-expanded', !isExpanded);
+        navbarCollapse.classList.toggle('show');
+        
+        if (mobileOverlay) {
+            mobileOverlay.classList.toggle('show');
+        }
+        
+        // Toggle hamburger animation
+        this.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on overlay
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', function() {
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            navbarCollapse.classList.remove('show');
+            this.classList.remove('show');
+            mobileToggle.classList.remove('active');
+        });
+    }
+    
+    // Close mobile menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 991) {
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                navbarCollapse.classList.remove('show');
+                if (mobileOverlay) mobileOverlay.classList.remove('show');
+                mobileToggle.classList.remove('active');
+            }
+        });
+    });
+}
+
+// Responsive utilities
+function handleResize() {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    
+    if (window.innerWidth > 991) {
+        // Desktop view - ensure mobile menu is closed
+        if (navbarCollapse) navbarCollapse.classList.remove('show');
+        if (mobileOverlay) mobileOverlay.classList.remove('show');
+        if (mobileToggle) {
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileToggle.classList.remove('active');
+        }
+    }
 }
