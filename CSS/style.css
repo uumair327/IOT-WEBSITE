@@ -6640,4 +6640,393 @@ me Toggle Button Styles */
 [data-theme="light"] .mobile-theme-btn:hover {
     background: #007bff;
     color: white;
+}/* Cont
+act Form Styles */
+.contact-section {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+}
+
+.contact-info {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+}
+
+.contact-form {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+}
+
+/* Modern Form Styles */
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Input and Select Base Styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: var(--input-text);
+    transition: var(--transition);
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 247, 255, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+/* Custom Select Dropdown Styling */
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f7ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+    cursor: pointer;
+}
+
+.form-group select:hover {
+    border-color: var(--primary);
+}
+
+.form-group select option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 0.75rem;
+}
+
+/* Select placeholder styling */
+.form-group select option[value=""] {
+    color: var(--input-placeholder);
+}
+
+/* Textarea specific styles */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+/* Form Error Styles */
+.form-error {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: var(--transition);
+}
+
+.form-error.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Character Count */
+.character-count {
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--bg-primary);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 247, 255, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.submit-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--bg-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form Success State */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 12px;
+    color: #22c55e;
+}
+
+.form-success.show {
+    display: block;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Contact Info Styles */
+.contact-info-header h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-header p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-primary);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.contact-text h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.contact-text p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.social-links h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.social-icon:hover {
+    background: var(--primary);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 247, 255, 0.3);
+}
+
+/* Light Theme Adjustments */
+[data-theme="light"] .contact-section {
+    background: #f8f9fa;
+}
+
+[data-theme="light"] .contact-info,
+[data-theme="light"] .contact-form {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #2c3e50;
+}
+
+[data-theme="light"] .form-group input::placeholder,
+[data-theme="light"] .form-group textarea::placeholder {
+    color: rgba(44, 62, 80, 0.6);
+}
+
+[data-theme="light"] .form-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007bff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group select:focus,
+[data-theme="light"] .form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+[data-theme="light"] .submit-btn {
+    background: linear-gradient(135deg, #007bff, #6f42c1);
+}
+
+[data-theme="light"] .contact-icon {
+    background: #007bff;
+}
+
+[data-theme="light"] .social-icon {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #2c3e50;
+}
+
+[data-theme="light"] .social-icon:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.875rem 1rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .submit-btn {
+        padding: 0.875rem 1.5rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
 }
